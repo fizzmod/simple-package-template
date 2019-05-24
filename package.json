@@ -1,0 +1,40 @@
+{
+  "name": "simple-package-template",
+  "description": "simple package description",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
+    "babel-core": "^7.0.0-beta.3",
+    "expect.js": "^0.3.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rollup": "^0.46.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "sinon": "^7.3.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "export MOCHA_RUNNING=true; mocha --exit --require @babel/register --require @babel/polyfill --recursive test/",
+    "coverage": "nyc npm run test",
+    "coverage-report": "nyc --reporter=html npm test",
+    "pretest": "npm run build",
+    "jsdoc": "jsdoc -c ./jsdoc.conf.json -r && google-chrome ./out/index.html"
+  },
+  "files": [
+    "dist"
+  ]
+}
