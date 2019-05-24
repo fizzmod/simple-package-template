@@ -28,7 +28,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "export MOCHA_RUNNING=true; mocha --exit --require @babel/register --require @babel/polyfill --recursive test/",
+    "test": "export MOCHA_RUNNING=true; mocha --exit --require @babel/register @babel/polyfill --recursive test/",
     "coverage": "nyc npm run test",
     "coverage-report": "nyc --reporter=html npm test",
     "pretest": "npm run build",
