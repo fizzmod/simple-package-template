@@ -7,10 +7,12 @@ import pkg from './package.json';
 export default [
 	// browser-friendly UMD build
 	{
-		entry: 'src/index.js',
-		dest: pkg.browser,
-		format: 'umd',
-		moduleName: 'howLongUntilLunch',
+		input: 'src/index.js',
+		output: {
+			name: 'main',
+			file: pkg.browser,
+			format: 'umd'
+		},
 		plugins: [
 			json(),
 			resolve(), // so Rollup can find `ms`
@@ -19,7 +21,7 @@ export default [
 				runtimeHelpers: true,
 				exclude: ['node_modules/**'],
 				presets: ['@babel/preset-env'],
-				plugins: ['@babel/plugin-proposal-object-rest-spread', "@babel/plugin-transform-runtime"]
+				plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
 			}),
 			commonjs()// so Rollup can convert `ms` to an ES module
 		]
@@ -31,10 +33,10 @@ export default [
 	// builds from a single configuration where possible, using
 	// the `targets` option which can specify `dest` and `format`)
 	{
-		entry: 'src/index.js',
-		targets: [
-			{ dest: pkg.main, format: 'cjs' },
-			{ dest: pkg.module, format: 'es' }
+		input: 'src/index.js',
+		output: [
+			{ file: pkg.main, format: 'cjs' },
+			{ file: pkg.module, format: 'es' }
 		],
 		plugins: [
 			babel({
@@ -42,7 +44,7 @@ export default [
 				runtimeHelpers: true,
 				exclude: ['node_modules/**'],
 				presets: ['@babel/preset-env'],
-				plugins: ['@babel/plugin-proposal-object-rest-spread', "@babel/plugin-transform-runtime"]
+				plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
 			})
 		]
 	}
