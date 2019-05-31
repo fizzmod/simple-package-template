@@ -1,6 +1,6 @@
 {
-  "name": "simple-package-template",
-  "description": "simple package description",
+  "name": "simple-package-test",
+  "description": "simple package description test",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -19,24 +19,23 @@
     "nyc": "^14.1.1",
     "rollup": "^1.12.5",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.0.0",
     "sinon": "^7.3.2"
   },
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "mocha",
-    "coverage": "nyc npm run test",
     "coverage-report": "nyc --reporter=html npm test",
+    "coverage": "nyc npm run test",
     "pretest": "npm run build",
+    "prepack": "npm run test",
     "jsdoc": "jsdoc -c ./jsdoc.conf.json -r && google-chrome ./out/index.html"
   },
   "files": [
     "dist"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@babel/runtime": "^7.4.5"
   }
 }
