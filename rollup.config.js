@@ -1,5 +1,5 @@
 import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json'
+import json from 'rollup-plugin-json';
 import pkg from './package.json';
 
 export default [
@@ -10,10 +10,7 @@ export default [
 	// the `targets` option which can specify `dest` and `format`)
 	{
 		input: 'src/index.js',
-		output: [
-			{ file: pkg.main, format: 'cjs' },
-			{ file: pkg.module, format: 'es' }
-		],
+		output: [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
 		plugins: [
 			json(),
 			babel({

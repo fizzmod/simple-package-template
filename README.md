@@ -6,6 +6,7 @@ This repository is  for create a simple packages with es6 features
 - Babel for transpiling
 - Rollup for building
 - Mocha for testing
+- Eslint and Prettier for better code
 
 ### Info
 

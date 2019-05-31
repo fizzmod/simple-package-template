@@ -1,3 +1,5 @@
+/* eslint-env mocha */
+
 import { isObject, merge } from '../src';
 
 const assert = require('assert');
@@ -9,7 +11,7 @@ describe('Test utils', () => {
 	it('if is a object', () => {
 		expect(isObject({})).to.be(true);
 	});
-		
+
 	it('merge objects', () => {
 		const obj1 = { name: 'test' };
 		const obj2 = { lastName: 'last' };
