@@ -7,6 +7,10 @@ This repository is  for create a simple packages with es6 features
 - Rollup for building
 - Mocha for testing
 
+### Info
+
+React and ReactDom are peerDependecies. Use [npm-install-peers](https://www.npmjs.com/package/npm-install-peers) for use in packages into peerDependecies 
+
 ### Testing
 
 Use mocha for testing runner
