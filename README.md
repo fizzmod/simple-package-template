@@ -17,12 +17,14 @@ React and ReactDom are peerDependecies. Use [npm-install-peers](https://www.npmj
 Use mocha for testing runner
 includes other libraries for easy testing 
 
-- Sinon [Documentation](https://sinonjs.org/releases/v7.3.2/)
-- expect.js [Github](https://github.com/Automattic/expect.js/)
+- Sinon [Documentation](https://sinonjs.org/releases/v7.3.2/) - unit test utils
+- nock [Github](https://github.com/nock/nock) - HTTP server mocking
+- jsdom [Github](https://github.com/jsdom/jsdom) - DOM emulation for node js
+- expect.js [Github](https://github.com/Automattic/expect.js/) - assertions for node.js
 
 For verify coverage in your
 
-- istanbul.js [Web](https://istanbul.js.org/)
+- istanbul.js [Web](https://istanbul.js.org/) 
 
 ### Documentation
 
